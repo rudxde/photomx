@@ -7,13 +7,15 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-
+using Artnet;
 namespace commander
 {
     public class Program
     {
+       public static ArtnetService myArtnetService;
         public static void Main(string[] args)
         {
+            myArtnetService = new ArtnetService();
             BuildWebHost(args).Run();
         }
 
