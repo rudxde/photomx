@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "dotnetbuild",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/commander/commander.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "angularbuild",
+            "command": "npm",
+            "type": "shell",
+            "args": [
+                "run",
+                "build",
+                "--prefix",
+                "${workspaceFolder}\\front\\"
+            ],
+            "problemMatcher": "$tsc-watch"
+        }
+    ]
+}
