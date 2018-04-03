@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { ArtnetService } from './core/services/artnet/artnet.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import { Http } from '@angular/http';
 export class AppComponent implements OnInit {
   title = 'app';
   constructor(
-    private http: Http
+    private artnetService: ArtnetService
   ) { }
   async ngOnInit() {
-    await this.http.put('http://localhost:9070/ARTNET', []).toPromise();
+    
   }
 }
