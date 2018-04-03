@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
     private artnetService: ArtnetService
   ) { }
   async ngOnInit() {
-    
+
+  }
+  setDmxData(chanel: number, data: number) {
+    this.artnetService.Universe0[chanel] = Math.round(data * 255 / 100);
   }
 }

@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 
 import { ArtnetService } from './core/services/artnet/artnet.service';
+import { FaderComponent } from './core/controls/fader/fader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FaderComponent
   ],
   imports: [
     BrowserModule,
