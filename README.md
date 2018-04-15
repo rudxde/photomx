@@ -14,10 +14,11 @@ N.A
   
 N.A.  
   
-## Licence
-  
-N.A.  
-
 ## Project Management
 
 https://www.pivotaltracker.com/projects/2165330
+
+## License
+  
+GNU v3  
+([LICENSE.txt](https://github.com/rudxde/photomx/blob/dev/LICENSE.txt))
