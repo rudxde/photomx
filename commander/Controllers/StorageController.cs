@@ -76,7 +76,7 @@ namespace commander.Controllers
 
         private String getFileName(String Type, String Entry)
         {
-            return $"data/${Type}/${Entry}.entry";
+            return $"data/{Type}/{Entry}.entry";
         }
 
         private void ensureDirectory(String directory)
