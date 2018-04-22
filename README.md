@@ -1,18 +1,12 @@
 # Photomx
 Photomx is a opensource DMX controller based on modern Web technologies.  
 
-## Version & download
-current stable is 0.0.0  
-  
-Download: N.A.
+## Documentation
+[> /docs](./docs/index.md)
 
-## requirement
+## Build & Setup
   
-N.A  
-
-## build
-  
-N.A.  
+Read [Development Setup](./docs/develop/setup.md).
   
 ## Project Management
 
