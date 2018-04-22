@@ -11,4 +11,4 @@
 ## [ICueble](./ICueble.md)
 ## [IFade](./IFade.md)
 ## [IFixture](./IFixture.md)
-## [LineatFade](./LineatFade.md)
+## [LinearFade](./LinearFade.md)
