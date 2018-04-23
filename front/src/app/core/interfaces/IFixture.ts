@@ -1,3 +1,9 @@
+import { IArtnetPatch } from './IArtnetPatch';
+import { IChannel } from './IChannel';
+
 export interface IFixture {
-  // TODO
+  patch: IArtnetPatch;
+  channels: IChannel[];
+
+  tick(): void;
 }
