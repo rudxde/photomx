@@ -1,5 +1,4 @@
 # IArtnetData
-(not yet Implemented)  
 
 ![IArtnetData](./assets/20180422_IArtnetData_v1.png)
 
