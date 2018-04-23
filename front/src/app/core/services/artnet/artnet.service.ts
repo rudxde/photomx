@@ -1,37 +1,45 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { IArtnetData } from './IArtnetData';
+import { IArtnetPatch } from './IArtnetPatch';
 @Injectable()
 export class ArtnetService {
 
   comanderArntetUrl = 'http://localhost:5000/Artnet';
 
-  public Universe0: number[];
+  artnetData: IArtnetData[];
 
   constructor(
     private http: Http
   ) {
-    this.Universe0 = new Array(512).fill(0);
-    console.log('ArtnetService starting');
-    this.addArtnetClient('192.168.178.24', 0);
-    this.sendArtnetTask();
+    this.artnetData = [];
   }
 
-  addArtnetClient(ipAddr: string, universe: number) {
-    this.http.post(`${this.comanderArntetUrl}/client/${ipAddr}/${universe}`, null).toPromise()
-      .then(() => {console.log('ok')})
+  addArtnetClient(ipAddr: string, artnet: number, subnet: number) {
+    this.http.post(`${this.comanderArntetUrl}/client/${ipAddr}/${artnet}:${subnet}`, null).toPromise()
+      .then(() => { console.debug(`Successfully added ${ipAddr} to ${artnet}:${subnet}`); })
       .catch(err => console.error(err));
   }
 
-  sendArtnetTask() {
-    setInterval(() => {
-      this.sendArtnetPackage(0, 0, 0, this.Universe0);
-    }, 16);
+  public requestArtnetData(patch: IArtnetPatch): IArtnetData {
+    for (let i of this.artnetData) {
+      if (i.artnet === patch.artnet && i.subnet === patch.subnet) {
+        return i;
+      }
+    }
+
+    const newData = {
+      artnet: patch.artnet,
+      subnet: patch.subnet,
+      data: new Array(511).fill(0)
+    };
+    this.artnetData.push(newData);
+    return newData;
   }
 
-  sendArtnetPackage(net: number, subnet: number, universe: number, data: number[]) {
-    this.http.put(`${this.comanderArntetUrl}/DMX/${universe}`, data).toPromise().then(() => {
-    }).catch(err => {
+  sendArtnet() {
+    this.artnetData.forEach(async ad => {
+      await this.http.put(`${this.comanderArntetUrl}/DMX/`, ad).toPromise();
     });
   }
-
 }
