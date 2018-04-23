@@ -1,5 +1,4 @@
-# IArtnetPatch
-(not yet Implemented)  
+# IArtnetPatch 
 
 ![IArtnetPatch](./assets/20180419_IArtnetPatch_v1.png)
 
