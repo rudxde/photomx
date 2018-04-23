@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { IArtnetData } from './IArtnetData';
-import { IArtnetPatch } from './IArtnetPatch';
+import { IArtnetData } from '../../interfaces/IArtnetData';
+import { IArtnetPatch } from '../../interfaces/IArtnetPatch';
 @Injectable()
 export class ArtnetService {
 
