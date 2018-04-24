@@ -11,10 +11,11 @@ namespace commander.Controllers
     public class ArtnetController : Controller
     {
         [HttpPut]
-        [Route("DMX/{Universe}")]
-        public IActionResult PutDmx([FromRoute]int Universe, [FromBody]byte[] DMXdata)
+        [Route("DMX/")]
+        public IActionResult PutDmx([FromBody]IArtnetData artnetData)
         {
-            Program.myArtnetService.universes[Universe].DMXdata = DMXdata;
+            
+            Program.myArtnetService.universes[artnetData.artnet, artnetData.subnet].DMXdata = artnetData.data;
             return new OkResult();
         }
 
@@ -26,17 +27,17 @@ namespace commander.Controllers
         }
 
         [HttpPost]
-        [Route("client/{ip}/{universe}")]
-        public IActionResult AddNewClient([FromRoute]String ip, [FromRoute]int universe)
+        [Route("client/{ip}/{artnet}:{subnet}")]
+        public IActionResult AddNewClient([FromRoute]String ip, [FromRoute]int artnet, [FromRoute]int subnet)
         {
-            Program.myArtnetService.clientHolder.addClient(ip, universe);
+            Program.myArtnetService.clientHolder.addClient(ip, artnet, subnet);
             return new OkResult();
         }
         [HttpDelete]
-        [Route("client/{ip}/{universe}")]
-        public IActionResult RemoveClient([FromRoute]String ip, [FromRoute]int universe)
+        [Route("client/{ip}/{artnet}:{subnet}")]
+        public IActionResult RemoveClient([FromRoute]String ip, [FromRoute]int artnet, [FromRoute]int subnet)
         {
-            Program.myArtnetService.clientHolder.removeClient(ip, universe);
+            Program.myArtnetService.clientHolder.removeClient(ip, artnet, subnet);
             return new OkResult();
         }
     }

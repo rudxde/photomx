@@ -11,8 +11,8 @@ namespace Artnet
         private List<ArtnetSender> clients;
         private UdpClient udpClient;
         private bool running;
-        private Dmxdata[] universes;
-        public ArtnetClientHolder(Dmxdata[] _universes)
+        private Dmxdata[,] universes;
+        public ArtnetClientHolder(Dmxdata[,] _universes)
         {
             universes = _universes;
             clients = new List<ArtnetSender>();
@@ -34,21 +34,21 @@ namespace Artnet
                 Thread.Sleep(16);
             }
         }
-        public void addClient(String IpEndpoint, int universe)
+        public void addClient(String IpEndpoint, int artnet, int subnet)
         {
             lock (clients)
             {
-                ArtnetSender newSender = new ArtnetSender(IpEndpoint, udpClient, universe);
+                ArtnetSender newSender = new ArtnetSender(IpEndpoint, udpClient, artnet, subnet);
                 clients.Add(newSender);
             }
         }
-        public void removeClient(String IpEndpoint, int universe)
+        public void removeClient(String IpEndpoint, int artnet, int subnet)
         {
             lock (clients)
             {
                 clients.Remove(
                     clients.Find(item =>
-                        item.universe == universe && item.ipEndPointStr.Equals(IpEndpoint)
+                        item.artnet == artnet && item.subnet == subnet && item.ipEndPointStr.Equals(IpEndpoint)
                     ));
             }
         }
@@ -58,7 +58,7 @@ namespace Artnet
             {
                 foreach (ArtnetSender client in clients)
                 {
-                    yield return new ClientListData() { ip = client.ipEndPointStr, universe = client.universe };
+                    yield return new ClientListData() { ip = client.ipEndPointStr, artnet = client.artnet, subnet = client.subnet };
                 }
             }
         }
@@ -66,6 +66,7 @@ namespace Artnet
     public class ClientListData
     {
         public string ip { get; set; }
-        public int universe { get; set; }
+        public int artnet { get; set; }
+        public int subnet { get; set; }
     }
 }

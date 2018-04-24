@@ -9,7 +9,7 @@ namespace Artnet
         {
             DMXdata = new byte[512];
         }
-        public byte[] getArtnetData(byte net, byte subnet, byte universe)
+        public byte[] getArtnetData(byte artnet, byte subnet)
         {
             byte[] Artnetdata = new byte[530];
             Array.Copy(DMXdata, 0, Artnetdata, 18, 512);
@@ -32,9 +32,9 @@ namespace Artnet
             // physical
             Artnetdata[13] = 0x00;
             // high : subnet | low: universe
-            Artnetdata[14] = (byte)((subnet << 4) | (universe & 15));
+            Artnetdata[14] = subnet;
             // net
-            Artnetdata[15] = net;
+            Artnetdata[15] = artnet;
             // length
             Artnetdata[16] = 0x01;
             Artnetdata[17] = 0x00;
