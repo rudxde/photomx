@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { ArtnetService } from './core/services/artnet/artnet.service';
 import { StorageService } from './core/services/storage/storage.service';
 import { FaderComponent } from './core/controls/fader/fader.component';
+import { FixtureService } from './core/services/fixture/fixture.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FaderComponent } from './core/controls/fader/fader.component';
   ],
   providers: [
     ArtnetService,
-    StorageService
+    StorageService,
+    FixtureService
   ],
   bootstrap: [AppComponent]
 })
