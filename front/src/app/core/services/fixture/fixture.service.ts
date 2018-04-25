@@ -7,6 +7,8 @@ export class FixtureService {
 
   constructor() { }
   tick(): void {
-    // TODO
+    for (let fixture of this.fixtures) {
+      fixture.tick();
+    }
   }
 }
