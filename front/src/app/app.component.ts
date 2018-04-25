@@ -7,14 +7,7 @@ import { ArtnetService } from './core/services/artnet/artnet.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  constructor(
-    private artnetService: ArtnetService
-  ) { }
+  constructor() { }
   async ngOnInit() {
-
-  }
-  setDmxData(chanel: number, data: number) {
-    this.artnetService.Universe0[chanel] = Math.round(data * 255 / 100);
   }
 }
