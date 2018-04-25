@@ -19,7 +19,7 @@
                 "run",
                 "build",
                 "--prefix",
-                "${workspaceFolder}\\front\\"
+                "${workspaceFolder}/front/"
             ],
             "problemMatcher": "$tsc-watch"
         }
