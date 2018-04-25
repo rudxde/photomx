@@ -1,7 +1,7 @@
 # ICueble
 (not yet Implemented)  
 
-![ICueble](./assets/20180419_ICueble_v1.png)
+![ICueble](./assets/ICueble_v2.png)
 
 ### Dependencies:  
 - [IFixture](./IFixture.md)

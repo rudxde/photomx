@@ -1,7 +1,7 @@
 # IChannel
 (not yet Implemented)  
 
-![IChannel](./assets/20180419_IChannel_v1.png)
+![IChannel](./assets/IChannel_v2.png)
 
 ### Dependencies:  
 - [ICueble](./ICueble.md)

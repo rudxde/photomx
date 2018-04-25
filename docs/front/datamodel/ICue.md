@@ -1,7 +1,7 @@
 # ICue
 (not yet Implemented)  
 
-![CueList](./assets/20180419_ICue_v1.png)
+![CueList](./assets/ICue_v2.png)
 
 ### Dependencies:  
 - [CueTrigger](./CueTrigger.md)

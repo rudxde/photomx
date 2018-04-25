@@ -1,7 +1,7 @@
 # GeneralCue
 (not yet Implemented)  
 
-![CueList](./assets/20180419_GeneralCue_v1.png)
+![CueList](./assets/GeneralCue_v2.png)
 
 ### Dependencies:  
 - [CueTrigger](./CueTrigger.md)

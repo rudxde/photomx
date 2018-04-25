@@ -1,7 +1,7 @@
 # IFixture
 (not yet Implemented)  
 
-![IFixture](./assets/20180419_IFixture_v1.png)
+![IFixture](./assets/IFixture_v2.png)
 
 ### Dependencies:  
 - [IArtnetPatch](./IArtnetPatch.md)
