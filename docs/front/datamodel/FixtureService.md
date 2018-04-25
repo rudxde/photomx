@@ -1,5 +1,4 @@
 # FixtureService
-(not yet Implemented)  
 
 ![FixtureService](./assets/FixtureService_v1.png)
 

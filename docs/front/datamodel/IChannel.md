@@ -1,5 +1,4 @@
 # IChannel
-(not yet Implemented)  
 
 ![IChannel](./assets/IChannel_v2.png)
 

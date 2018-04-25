@@ -1,5 +1,4 @@
 # ICueble
-(not yet Implemented)  
 
 ![ICueble](./assets/ICueble_v2.png)
 
