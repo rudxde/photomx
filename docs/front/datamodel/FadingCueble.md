@@ -1,7 +1,7 @@
 # FadingCueble
 (not yet Implemented)  
 
-![FadingCueble](./assets/20180419_FadingCueble_v1.png)
+![FadingCueble](./assets/FadingCueble_v1.png)
 
 ### Dependencies:  
 - [ICueble](./ICueble.md)

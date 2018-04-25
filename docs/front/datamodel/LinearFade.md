@@ -1,7 +1,7 @@
 # LinearFade
 (not yet Implemented)  
 
-![LinearFade](./assets/20180419_LinearFade_v1.png)
+![LinearFade](./assets/LinearFade_v1.png)
 
 ### Dependencies:  
 - [IFade](./IFade.md)

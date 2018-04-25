@@ -1,7 +1,7 @@
 # GlobalClockService
 (not yet Implemented)  
 
-![GlobalClockService](./assets/20180422_GlobalClockService_v1.png)
+![GlobalClockService](./assets/GlobalClockService_v1.png)
 
 ### Dependencies:  
 - [FixtureService](./FixtureService.md)

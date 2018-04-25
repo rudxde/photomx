@@ -1,11 +1,11 @@
 # CueList
 (not yet Implemented)  
 
-![CueList](./assets/20180419_CueList_v1.png)
+![CueList](./assets/CueList_v1.png)
 
 ## CueListState
 
-![CueListState](./assets/20180419_CueListState_v1.png)
+![CueListState](./assets/CueListState_v1.png)
 
 ### Dependencies:  
 - [ICue](./ICue.md)

@@ -1,7 +1,7 @@
 # IFade
 (not yet Implemented)  
 
-![IFade](./assets/20180419_IFade_v1.png)
+![IFade](./assets/IFade_v1.png)
 
 ### Dependencies:  
 - [ICueble](./ICueble.md)

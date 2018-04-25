@@ -1,7 +1,7 @@
 # ArtnetService
 (not yet Implemented)  
 
-![ArtnetService](./assets/20180422_ArtnetService_v1.png)
+![ArtnetService](./assets/ArtnetService_v1.png)
 
 ### Dependencies:  
 - [IArtnetData](./IArtnetData.md)

@@ -1,6 +1,6 @@
 # IArtnetPatch 
 
-![IArtnetPatch](./assets/20180419_IArtnetPatch_v1.png)
+![IArtnetPatch](./assets/IArtnetPatch_v1.png)
 
 ### Dependencies:
 

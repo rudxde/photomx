@@ -1,6 +1,6 @@
 # IArtnetData
 
-![IArtnetData](./assets/20180422_IArtnetData_v1.png)
+![IArtnetData](./assets/IArtnetData_v1.png)
 
 ### Dependencies:  
 

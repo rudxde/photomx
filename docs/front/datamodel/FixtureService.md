@@ -1,7 +1,7 @@
 # FixtureService
 (not yet Implemented)  
 
-![FixtureService](./assets/20180422_FixtureService_v1.png)
+![FixtureService](./assets/FixtureService_v1.png)
 
 ### Dependencies:  
 - [IFixture](./IFixture.md)

@@ -1,7 +1,7 @@
 # CueTrigger
 (not yet Implemented)  
 
-![CueTrigger](./assets/20180419_CueTrigger_v1.png)
+![CueTrigger](./assets/CueTrigger_v1.png)
 
 ### Dependencies:  
 

@@ -1,7 +1,7 @@
 # GeneralCueble
 (not yet Implemented)  
 
-![GeneralCueble](./assets/20180419_GeneralCueble_v1.png)
+![GeneralCueble](./assets/GeneralCueble_v1.png)
 
 ### Dependencies:  
 - [IFixture](./IFixture.md)
