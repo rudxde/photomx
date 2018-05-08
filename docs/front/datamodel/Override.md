@@ -10,4 +10,4 @@
 - [ICue](./ICue.md)
 
 ### Description:
-The Override inherits from the [ICueble](./ICueble.md) interface. It overrides an ICueble as an old Value and sets another ICueble as value.
+The Override inherits from the [ICueble](./ICueble.md) interface. It saves an old ICueble as oldValue and overrides it with another ICueble.
