@@ -9,6 +9,7 @@ import { ArtnetService } from './core/services/artnet/artnet.service';
 import { StorageService } from './core/services/storage/storage.service';
 import { FaderComponent } from './core/controls/fader/fader.component';
 import { FixtureService } from './core/services/fixture/fixture.service';
+import { GlobalClockService } from './core/services/globalclock/globalclock.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FixtureService } from './core/services/fixture/fixture.service';
   providers: [
     ArtnetService,
     StorageService,
-    FixtureService
+    FixtureService,
+    GlobalClockService
   ],
   bootstrap: [AppComponent]
 })

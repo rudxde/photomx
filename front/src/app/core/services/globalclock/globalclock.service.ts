@@ -3,16 +3,13 @@ import { FixtureService } from '../fixture/fixture.service';
 import { ArtnetService } from '../artnet/artnet.service';
 
 @Injectable()
-export class GlobalclockserviceService {
+export class GlobalClockService {
   private timer: NodeJS.Timer;
-  private fixtureService: FixtureService;
-  private artnetService: ArtnetService;
 
-
-  constructor(fixtureService: FixtureService, artnetService: ArtnetService) {
-    this.fixtureService = fixtureService;
-    this.artnetService = artnetService;
-  }
+  constructor(
+    private fixtureService: FixtureService,
+    private artnetService: ArtnetService
+  ) {}
 
   private tick(): void {
     this.fixtureService.tick();
@@ -20,7 +17,7 @@ export class GlobalclockserviceService {
   }
 
   public start(): void {
-    this.timer = setInterval(this.tick, 200);  // TODO: delay is currently quite arbitrary
+    this.timer = setInterval(this.tick, 16);
   }
 
   public stop(): void {
