@@ -11,4 +11,8 @@ export class FixtureService {
       fixture.tick();
     }
   }
+
+  addFixture(fixture: IFixture) {
+    this.fixtures.push(fixture);
+  }
 }
