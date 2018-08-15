@@ -10,4 +10,5 @@ export interface ICueble {
   getValue(): number;
   shine(parentCue: ICue, parentCueList: CueList): void;
   isOverride(): boolean;
+  clone(override?: boolean): ICueble;
 }

@@ -7,7 +7,7 @@ export class FixtureService {
 
   constructor() { }
   tick(): void {
-    for (let fixture of this.fixtures) {
+    for (const fixture of this.fixtures) {
       fixture.tick();
     }
   }
