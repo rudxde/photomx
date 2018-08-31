@@ -31,15 +31,23 @@ export class ArtnetService {
     const newData = {
       artnet: patch.artnet,
       subnet: patch.subnet,
-      data: new Array(511).fill(0)
+      data: new Array(512).fill(0)
     };
     this.artnetData.push(newData);
     return newData;
   }
 
   sendArtnet() {
-    this.artnetData.forEach(async ad => {
-      await this.http.put(`${this.comanderArntetUrl}/DMX/`, ad).toPromise();
-    });
+    this.artnetData
+      .map(x => {
+        return {
+          artnet: x.artnet,
+          subnet: x.subnet,
+          data: x.data.join(','),
+        };
+      })
+      .forEach(async ad => {
+        await this.http.put(`${this.comanderArntetUrl}/DMX/`, ad).toPromise();
+      });
   }
 }

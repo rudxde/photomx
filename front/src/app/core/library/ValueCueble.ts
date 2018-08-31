@@ -22,7 +22,9 @@ export class ValueCueble implements ICueble {
             resultingCuble = this;
         } else {
             // Todo
+            resultingCuble = this;
         }
+        console.log(this.fixture.channels);
         this.fixture.channels[this.channelIndex].value = resultingCuble;
     }
 

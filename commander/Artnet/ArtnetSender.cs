@@ -19,8 +19,8 @@ namespace Artnet
             ipEndPoint = new IPEndPoint(ipAddress, 6454);
             ipEndPointStr = IpEndpoint;
             udpClient = _udpClient;
-            this.artnet = artnet;
-            this.subnet = subnet;
+            this.artnet = _artnet;
+            this.subnet = _subnet;
         }
 
         public void send(Dmxdata[,] universes)

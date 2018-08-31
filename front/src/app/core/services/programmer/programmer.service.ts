@@ -10,7 +10,9 @@ import { IFixture } from '../../interfaces/IFixture';
 export class ProgrammerService {
     cuebles: ICueble[];
     constructor(
-    ) { }
+    ) {
+        this.cuebles = [];
+    }
     setChannel(selectedFixture: IFixture, selectedChannelIndex: number, value: number): void {
         const cuble = new ValueCueble(selectedFixture, selectedChannelIndex, value, true);
         cuble.shine(null, null);

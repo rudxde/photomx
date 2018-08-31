@@ -5,7 +5,9 @@ import { IFixture } from '../../interfaces/IFixture';
 export class FixtureService {
   fixtures: IFixture[];
 
-  constructor() { }
+  constructor() {
+    this.fixtures = [];
+  }
   tick(): void {
     for (const fixture of this.fixtures) {
       fixture.tick();

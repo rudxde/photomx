@@ -12,9 +12,9 @@ namespace commander.Controllers
     {
         [HttpPut]
         [Route("DMX/")]
-        public IActionResult PutDmx([FromBody]IArtnetData artnetData)
+        public IActionResult PutDmx([FromBody]IRawArtnetData rawArtnetData)
         {
-            
+            ArtnetData artnetData = new ArtnetData(rawArtnetData);
             Program.myArtnetService.universes[artnetData.artnet, artnetData.subnet].DMXdata = artnetData.data;
             return new OkResult();
         }

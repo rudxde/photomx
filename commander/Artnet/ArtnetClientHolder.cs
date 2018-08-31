@@ -40,6 +40,7 @@ namespace Artnet
             {
                 ArtnetSender newSender = new ArtnetSender(IpEndpoint, udpClient, artnet, subnet);
                 clients.Add(newSender);
+                Console.WriteLine($"Add client: IP: {IpEndpoint}, udpClient: {udpClient}, artnet: {artnet}, subnet: {subnet}");
             }
         }
         public void removeClient(String IpEndpoint, int artnet, int subnet)
