@@ -43,7 +43,7 @@ export class ArtnetService {
         return {
           artnet: x.artnet,
           subnet: x.subnet,
-          data: x.data.join(','),
+          data: x.data.map(y => Math.floor(y)).join(','),
         };
       })
       .forEach(async ad => {

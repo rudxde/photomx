@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -15,11 +16,12 @@ import { ProgrammerService } from './core/services/programmer/programmer.service
 @NgModule({
   declarations: [
     AppComponent,
-    FaderComponent
+    FaderComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
   ],
   providers: [
     ArtnetService,

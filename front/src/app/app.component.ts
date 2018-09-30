@@ -11,21 +11,24 @@ import { GlobalClockService } from './core/services/globalclock/globalclock.serv
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  fors: any[];
   constructor(
     private artnetService: ArtnetService,
     private fixtureService: FixtureService,
     private programmer: ProgrammerService,
     private globalGlockService: GlobalClockService,
-  ) { }
+  ) {
+    this.fors = new Array(200);
+  }
   async ngOnInit() {
     this.artnetService.addArtnetClient('192.168.178.106', 0, 2);
-    this.fixtureService.addFixture(new SimpleChannelFixture(2, this.artnetService));
+    this.fixtureService.addFixture(new SimpleChannelFixture(200, this.artnetService));
     this.globalGlockService.start();
   }
-  on(index: number) {
-    this.programmer.setChannel(this.fixtureService.fixtures[0], index, 255);
+  setValue(index: number, value: number) {
+    this.programmer.setChannel(this.fixtureService.fixtures[0], index, value / 100 * 255);
   }
-  off(index: number) {
-    this.programmer.setChannel(this.fixtureService.fixtures[0], index, 0);
+  reset(index: number) {
+    this.programmer.reset();
   }
 }
