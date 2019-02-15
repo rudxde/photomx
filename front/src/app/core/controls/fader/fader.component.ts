@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter }
 export class FaderComponent implements OnInit {
 
 
-  @Output('outvalue')
+  @Output()
   outvalue: EventEmitter<number>;
 
   @ViewChild('fader')

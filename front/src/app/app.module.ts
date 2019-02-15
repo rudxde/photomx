@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { HttpModule } from '@angular/http';
 
 import { ArtnetService } from './core/services/artnet/artnet.service';
 import { StorageService } from './core/services/storage/storage.service';
@@ -12,6 +11,7 @@ import { FaderComponent } from './core/controls/fader/fader.component';
 import { FixtureService } from './core/services/fixture/fixture.service';
 import { GlobalClockService } from './core/services/globalclock/globalclock.service';
 import { ProgrammerService } from './core/services/programmer/programmer.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { ProgrammerService } from './core/services/programmer/programmer.service
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
   ],
   providers: [

@@ -10,7 +10,6 @@
     "build-prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
     "electron": "electron ."
   },
   "private": true,
@@ -49,7 +48,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^5.4.2",
     "ts-node": "~4.1.0",
-    "tslint": "~5.9.1",
+    "tslint": "^5.12.1",
     "typescript": "~3.2.4"
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { IArtnetData } from '../../interfaces/IArtnetData';
 import { IArtnetPatch } from '../../interfaces/IArtnetPatch';
+import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ArtnetService {
 
@@ -10,19 +10,19 @@ export class ArtnetService {
   artnetData: IArtnetData[];
 
   constructor(
-    private http: Http
+    private httpClient: HttpClient
   ) {
     this.artnetData = [];
   }
 
   addArtnetClient(ipAddr: string, artnet: number, subnet: number) {
-    this.http.post(`${this.comanderArntetUrl}/client/${ipAddr}/${artnet}:${subnet}`, null).toPromise()
+    this.httpClient.post(`${this.comanderArntetUrl}/client/${ipAddr}/${artnet}:${subnet}`, null).toPromise()
       .then(() => { console.debug(`Successfully added ${ipAddr} to ${artnet}:${subnet}`); })
       .catch(err => console.error(err));
   }
 
   public requestArtnetData(patch: IArtnetPatch): IArtnetData {
-    for (let i of this.artnetData) {
+    for (const i of this.artnetData) {
       if (i.artnet === patch.artnet && i.subnet === patch.subnet) {
         return i;
       }
@@ -47,7 +47,7 @@ export class ArtnetService {
         };
       })
       .forEach(async ad => {
-        await this.http.put(`${this.comanderArntetUrl}/DMX/`, ad).toPromise();
+        await this.httpClient.put(`${this.comanderArntetUrl}/DMX/`, ad).toPromise();
       });
   }
 }
