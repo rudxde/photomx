@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace commander
 {
     public class Startup
-    {
+        {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

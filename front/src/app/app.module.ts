@@ -10,16 +10,16 @@ import { CoreModule } from './core/core.module';
 import { UiModule } from './ui/ui.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    CoreModule.forRoot(),
-    UiModule,
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        CoreModule.forRoot(),
+        UiModule,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

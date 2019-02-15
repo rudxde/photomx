@@ -1,6 +1,6 @@
 import { ICueble } from './ICueble';
 
 export interface IChannel {
-  value: ICueble;
-  default: ICueble;
+    value: ICueble;
+    default: ICueble;
 }
