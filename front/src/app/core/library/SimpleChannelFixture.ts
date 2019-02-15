@@ -3,7 +3,6 @@ import { IArtnetPatch } from '../interfaces/IArtnetPatch';
 import { IChannel } from '../interfaces/IChannel';
 import { ArtnetService } from '../services/artnet/artnet.service';
 import { IArtnetData } from '../interfaces/IArtnetData';
-import { ValueCueble } from './ValueCueble';
 
 export class SimpleChannelFixture implements IFixture {
     patch: IArtnetPatch;
@@ -28,7 +27,11 @@ export class SimpleChannelFixture implements IFixture {
     tick(): void {
         for (let i = 0; i < this.channels.length; i++) {
             this.artnetData.data[this.patch.startAdress + i] =
-                this.channels && this.channels[i] && this.channels[i].value && this.channels[i].value.getValue() || 0;
+                this.channels &&
+                this.channels[i] &&
+                this.channels[i].value &&
+                this.channels[i].value.getValue()
+                || 0;
         }
     }
 }
