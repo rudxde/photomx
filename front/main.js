@@ -2,6 +2,9 @@ const { app, BrowserWindow } = require('electron')
 
 let electronWindow;
 
+require('source-map-support').install();
+
+
 function createWindow() {
     // Create the browser window.
     electronWindow = new BrowserWindow({
