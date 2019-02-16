@@ -4,7 +4,7 @@ import { ArtnetService } from '../artnet/artnet.service';
 
 @Injectable()
 export class GlobalClockService {
-    private timer: NodeJS.Timer;
+    private timer: any;
 
     constructor(
         private fixtureService: FixtureService,

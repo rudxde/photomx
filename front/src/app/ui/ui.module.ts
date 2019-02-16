@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaderComponent } from './fader/fader.component';
+import { ArtnetPickerComponent } from './artnet-picker/artnet-picker.component';
 
 @NgModule({
     declarations: [
-        FaderComponent
+        FaderComponent,
+        ArtnetPickerComponent,
     ],
     imports: [
-        CommonModule
+        CommonModule,
     ],
     exports: [
-        FaderComponent
+        FaderComponent,
+        ArtnetPickerComponent,
     ]
 })
 export class UiModule { }

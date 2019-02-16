@@ -1,0 +1,21 @@
+<div class="header">
+    <span class="artnet" (click)="pickerTab = 'artnet'" >artnet</span>
+    <span class="selected">
+        {{selected.artnet}}:{{selected.subnet}}
+    </span>
+    <span class="subnet" (click)="pickerTab = 'subnet'" >subnet</span>
+</div>
+<div class="artnet picker" *ngIf="pickerTab === 'artnet'">
+    <button *ngFor="let x of piackables" (click)="selectArtnet(x)">
+        {{x}}
+    </button>
+</div>
+<div class="subnet picker" *ngIf="pickerTab === 'subnet'">
+    <button *ngFor="let x of piackables" (click)="selectSubnet(x)">
+        {{x}}
+    </button>
+</div>
+<div class="footer">
+    <button class="abort" (click)="abort()">abort</button>
+    <button class="submit" (click)="submit()">ok</button>
+</div>

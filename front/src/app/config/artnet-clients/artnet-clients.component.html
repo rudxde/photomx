@@ -1,0 +1,24 @@
+<div class="add-client">
+    IP:
+    <input type="text" [(ngModel)]="selectedIp">
+    Artnet:
+    <button class="input-like" (click)="openArtnetPicker()">
+        {{selectedArtnet.artnet}}:{{selectedArtnet.subnet}}
+    </button>
+    <app-artnet-picker
+        *ngIf="artnetPickerIsOpen"
+        [result]="artnetPickerResult$"
+        [preselected]="selectedArtnet"
+    ></app-artnet-picker>
+    <button (click)="addNewClient()">
+        <img src="add" alt="add">
+    </button>
+</div>
+<div class="client-list">
+    <span *ngFor="let client of allClients">
+        {{client.ip}} - {{client.artnetDefinition.artnet}}:{{client.artnetDefinition.subnet}}
+        <button (click)="removeClient(client)">
+            remove
+        </button>
+    </span>
+</div>

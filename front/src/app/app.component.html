@@ -1,6 +1,9 @@
-<button (click)="reset()"></button>
+<button (click)="reset()">Reset</button>
+<br />
 <span *ngFor="let x of fors; let i = index">
     <app-controls-fader (outvalue)="setValue(i,$event)"></app-controls-fader>
     <br />
     {{i}}
 </span>
+<br />
+<app-config-panel></app-config-panel>

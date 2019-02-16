@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
         this.fors = new Array(200);
     }
     async ngOnInit() {
-        this.artnetService.addArtnetClient('192.168.178.106', 0, 2);
         this.fixtureService.addFixture(new SimpleChannelFixture(200, this.artnetService));
         this.globalGlockService.start();
     }

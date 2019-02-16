@@ -3,11 +3,13 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+const commander = 'http://localhost:5000';
+
 export const environment = {
     production: false,
     apiEndpoints: {
-        commander: 'http://localhost:5000',
-        artnet: this.apiEndpoints.commander + '/Artnet',
-        storage: this.apiEndpoints.commander + '/Storage'
+        commander,
+        artnet: commander + '/Artnet',
+        storage: commander + '/Storage'
     }
 };
