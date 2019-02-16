@@ -3,6 +3,9 @@
         "node_modules/codelyzer"
     ],
     "rules": {
+        "no-unsafe-any": true,
+        "strict-type-predicates": true,
+        "typedef": true,
         "arrow-return-shorthand": true,
         "class-name": true,
         "comment-format": [

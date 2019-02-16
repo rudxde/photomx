@@ -8,7 +8,7 @@ require('source-map-support').install();
 function createWindow() {
     // Create the browser window.
     electronWindow = new BrowserWindow({
-        backgroundColor: '#1e1e1e',
+        backgroundColor: '#ffffff',
         // icon: `file://${__dirname}/dist/assets/logo.png`
     });
 
@@ -16,7 +16,7 @@ function createWindow() {
     electronWindow.loadURL(`file://${__dirname}/dist/index.html`);
 
     //// uncomment below to open the DevTools.
-    // win.webContents.openDevTools()
+    electronWindow.webContents.openDevTools()
 
     // Event when the window is closed.
     electronWindow.on('closed', function() {
