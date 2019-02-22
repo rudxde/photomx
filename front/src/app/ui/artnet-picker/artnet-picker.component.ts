@@ -23,7 +23,7 @@ export class ArtnetPickerComponent extends DialogAbstractComponent<IArtnetDefini
         this.pickerTab = 'artnet';
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         if (this.preselected) {
             this.selected = {...this.preselected}; // clone object
         } else {
@@ -31,16 +31,16 @@ export class ArtnetPickerComponent extends DialogAbstractComponent<IArtnetDefini
         }
     }
 
-    selectArtnet(selectedArtnet: number) {
+    selectArtnet(selectedArtnet: number): void {
         this.selected.artnet = selectedArtnet;
         this.pickerTab = 'subnet';
     }
 
-    selectSubnet(selectedSubnet: number) {
+    selectSubnet(selectedSubnet: number): void {
         this.selected.subnet = selectedSubnet;
     }
 
-    submit() {
+    submit(): void {
         super.submit(this.selected);
     }
 }

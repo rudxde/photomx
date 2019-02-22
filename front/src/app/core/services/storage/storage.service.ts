@@ -7,27 +7,27 @@ import { environment } from '../../../../environments/environment';
 export class StorageService {
 
 
-    constructor(
+    constructor (
         private httpClient: HttpClient
     ) {
 
     }
 
-    async readFile(Type: String, Entry: String): Promise<String> {
-        return await this.httpClient.get<string>(`${environment.apiEndpoints.storage}/${Type}/${Entry}`).toPromise();
+    async readFile(type: String, entry: String): Promise<String> {
+        return await this.httpClient.get<string>(`${environment.apiEndpoints.storage}/${type}/${entry}`).toPromise();
     }
 
-    async writeFile(Type: String, Entry: String, Content: String): Promise<void> {
+    async writeFile(type: String, entry: String, content: String): Promise<void> {
         const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
         await this.httpClient.post(
-            `${environment.apiEndpoints.storage}/${Type}/${Entry}`,
-            JSON.stringify(Content),
+            `${environment.apiEndpoints.storage}/${type}/${entry}`,
+            JSON.stringify(content),
             options
         ).toPromise();
     }
 
-    async getFiles(Type: String): Promise<string[]> {
-        return await this.httpClient.get<string[]>(`${environment.apiEndpoints.storage}/${Type}`).toPromise();
+    async getFiles(type: String): Promise<string[]> {
+        return await this.httpClient.get<string[]>(`${environment.apiEndpoints.storage}/${type}`).toPromise();
     }
 
 }

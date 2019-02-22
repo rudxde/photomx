@@ -9,6 +9,7 @@ export class SimpleChannelFixture implements IFixture {
     channels: IChannel[];
     artnetData: IArtnetData;
     constructor(
+        public name: String,
         size: number,
         private artnetService: ArtnetService
     ) {

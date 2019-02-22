@@ -14,7 +14,7 @@ export class FixtureService {
         }
     }
 
-    addFixture(fixture: IFixture) {
+    addFixture(fixture: IFixture): void {
         this.fixtures.push(fixture);
     }
 }

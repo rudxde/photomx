@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>Fixture</th>
+        <th>Channel</th>
+        <th>Value</th>
+        <th>Reset</th>
+    </tr>
+    <tr *ngFor="let cuble of programmerCuebles">
+        <td>
+            {{cuble.fixture.name}}
+        </td>
+        <td>
+            {{cuble.channelIndex}}
+        </td>
+        <td>
+            {{cuble.getValue()}}
+        </td>
+        <td>
+            <button (click)="removeCueble(cuble)">X</button>
+        </td>
+    </tr>
+</table>

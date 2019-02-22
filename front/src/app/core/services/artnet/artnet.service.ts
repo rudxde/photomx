@@ -7,7 +7,6 @@ import { environment } from '../../../../environments/environment';
 @Injectable()
 export class ArtnetService {
 
-
     artnetData: IArtnetData[];
 
     constructor(
@@ -20,18 +19,18 @@ export class ArtnetService {
         await this.httpClient.post(
             `${environment.apiEndpoints.artnet}/client/${client.ip}/${client.artnetDefinition.artnet}:${client.artnetDefinition.subnet}`, null
         )
-            .toPromise()
-            .then(() => console.debug(`Successfully added ${client.ip} to ${client.artnetDefinition.artnet}:${client.artnetDefinition.subnet}`))
-            .catch(console.error);
+        .toPromise()
+        .then(() => console.debug(`Successfully added ${client.ip} to ${client.artnetDefinition.artnet}:${client.artnetDefinition.subnet}`))
+        .catch(console.error);
     }
 
-    async removeArtnetClient(client: IArtnetClient) {
+    async removeArtnetClient(client: IArtnetClient): Promise<void> {
         await this.httpClient.delete(
             `${environment.apiEndpoints.artnet}/client/${client.ip}/${client.artnetDefinition.artnet}:${client.artnetDefinition.subnet}`
         )
-            .toPromise()
-            .then(() => console.debug(`Successfully removed ${client.ip} to ${client.artnetDefinition.artnet}:${client.artnetDefinition.subnet}`))
-            .catch(console.error);
+        .toPromise()
+        .then(() => console.debug(`Successfully removed ${client.ip} to ${client.artnetDefinition.artnet}:${client.artnetDefinition.subnet}`))
+        .catch(console.error);
     }
 
     async getArtnetClientList(): Promise<IArtnetClient[]> {
@@ -64,7 +63,7 @@ export class ArtnetService {
 
 
 
-    sendArtnet() {
+    sendArtnet(): void {
         this.artnetData
             .map(x => ({
                 artnet: x.artnet,

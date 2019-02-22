@@ -16,18 +16,18 @@ export class AppComponent implements OnInit {
         private artnetService: ArtnetService,
         private fixtureService: FixtureService,
         private programmer: ProgrammerService,
-        private globalGlockService: GlobalClockService,
+        private globalClockService: GlobalClockService,
     ) {
         this.fors = new Array(200);
     }
-    async ngOnInit() {
-        this.fixtureService.addFixture(new SimpleChannelFixture(200, this.artnetService));
-        this.globalGlockService.start();
+    async ngOnInit(): Promise<void> {
+        this.fixtureService.addFixture(new SimpleChannelFixture('SimpleChannelFixture', 200, this.artnetService));
+        this.globalClockService.start();
     }
-    setValue(index: number, value: number) {
+    setValue(index: number, value: number): void {
         this.programmer.setChannel(this.fixtureService.fixtures[0], index, value / 100 * 255);
     }
-    reset(index: number) {
+    reset(index: number): void {
         this.programmer.reset();
     }
 }

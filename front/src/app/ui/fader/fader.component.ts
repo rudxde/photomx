@@ -21,7 +21,7 @@ export class FaderComponent implements OnInit {
         this.outvalue = new EventEmitter<number>();
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.fader.nativeElement.onmousedown = (event => {
             this.mousedown = true;
             this.mouseClinetY = event.clientY;
