@@ -4,6 +4,7 @@ import { FixtureService } from './core/services/fixture/fixture.service';
 import { SimpleChannelFixture } from './core/library/SimpleChannelFixture';
 import { ProgrammerService } from './core/services/programmer/programmer.service';
 import { GlobalClockService } from './core/services/globalclock/globalclock.service';
+import { GlobalObjectsService } from './core/services/global-objects/global-objects.service';
 
 @Component({
     selector: 'app-root',
@@ -17,11 +18,12 @@ export class AppComponent implements OnInit {
         private fixtureService: FixtureService,
         private programmer: ProgrammerService,
         private globalClockService: GlobalClockService,
+        private globalObjectService: GlobalObjectsService,
     ) {
         this.fors = new Array(200);
     }
     async ngOnInit(): Promise<void> {
-        this.fixtureService.addFixture(new SimpleChannelFixture('SimpleChannelFixture', 200, this.artnetService));
+        this.fixtureService.addFixture(new SimpleChannelFixture('SimpleChannelFixture', 200, this.artnetService, this.globalObjectService));
         this.globalClockService.start();
     }
     setValue(index: number, value: number): void {

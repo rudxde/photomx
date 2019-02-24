@@ -6,15 +6,21 @@ import { GeneralCue } from '../../library/GeneralCue';
 import { ValueCueble } from '../../library/ValueCueble';
 import { IFixture } from '../../interfaces/IFixture';
 import { Subject } from 'rxjs';
+import { IGlobalObject } from '../../interfaces/global-object';
+import { GlobalObjectsService } from '../global-objects/global-objects.service';
 
 @Injectable()
-export class ProgrammerService {
+export class ProgrammerService implements IGlobalObject {
+    gid: string;
+    type: string = 'programmer';
     cuebles: ICueble[];
     public changes: Subject<ICueble[]>;
     constructor(
+        private globalObjectService: GlobalObjectsService,
     ) {
         this.cuebles = [];
         this.changes = new Subject<ICueble[]>();
+        this.globalObjectService.addNew(this);
     }
 
     setChannel(selectedFixture: IFixture, selectedChannelIndex: number, value: number): void {
@@ -36,12 +42,13 @@ export class ProgrammerService {
     }
 
     reset(): void {
+        this.cuebles.forEach(x => x.reset());
         this.cuebles = [];
         this.changes.next(this.cuebles);
     }
 
     generateCue(): GeneralCue {
-        const result = new GeneralCue();
+        const result = new GeneralCue(this.globalObjectService);
         result.cuebles = this.cuebles.map(x => x.clone(false));
         return result;
     }

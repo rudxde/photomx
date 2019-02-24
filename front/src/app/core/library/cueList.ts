@@ -2,8 +2,12 @@ import { ICue } from '../interfaces/ICue';
 import { ECueListState } from '../enumerations/CueListState';
 import { CueTrigger } from '../enumerations/CueTrigger';
 import { GlobalClockService } from '../services/globalclock/globalclock.service';
+import { IGlobalObject } from '../interfaces/global-object';
+import { GlobalObjectsService } from '../services/global-objects/global-objects.service';
 
-export class CueList {
+export class CueList implements IGlobalObject {
+    gid: string;
+    type: string = 'cuelist';
     public cueSteps: ICue[];
     public name: string;
     public fadeOutTime: number;
@@ -20,8 +24,10 @@ export class CueList {
 
     constructor(
         private globalClockService: GlobalClockService,
+        private globalObjectService: GlobalObjectsService,
     ) {
         this.state = ECueListState.STOPPED;
+        this.globalObjectService.addNew(this);
     }
 
     private get acutalCue(): ICue {

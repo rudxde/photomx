@@ -5,6 +5,7 @@ import { GlobalClockService } from './services/globalclock/globalclock.service';
 import { FixtureService } from './services/fixture/fixture.service';
 import { StorageService } from './services/storage/storage.service';
 import { ArtnetService } from './services/artnet/artnet.service';
+import { GlobalObjectsService } from './services/global-objects/global-objects.service';
 
 @NgModule({
     declarations: [],
@@ -22,6 +23,7 @@ export class CoreModule {
                 FixtureService,
                 GlobalClockService,
                 ProgrammerService,
+                GlobalObjectsService,
             ]
         };
     }
